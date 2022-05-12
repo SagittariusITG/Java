@@ -3,6 +3,28 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args){
 
+        enum Color{
+            AZUL(0),
+            AMARILLO(0),
+            VERDE(0),
+            ROJO(0);
+
+            private int numLapices;
+
+            public Color(int num){
+                this.numLapices = num;
+            }
+
+            public int getNumlapices(){
+                return this.numLapices;
+            }
+
+            public void setNumlapices(int num){
+                this.numLapices = num;
+            }
+
+        }
+
         // Persona
         persona miPersona = new persona();
         System.out.println(miPersona);
@@ -36,5 +58,21 @@ public class main {
         }
 
         System.out.println(prof);
+
+        // Colores
+        Color arrColor[] = Color.values();
+        for (color c : arrColor) {
+            System.out.println(c);
+        }
+        System.out.println("Ordinal de ROJO");
+        Color miColor = Color.valueOf("ROJO");
+        System.out.println(miColor.ordinal());
+
+        System.out.println("Mostramos cuantos lapices tenemos de cada color");
+        System.out.println(Color.AZUL.getNumlapices());
+        System.out.println("Mostramos cuantos lapices tenemos de cada color");
+        for (color c : Color.values()) {
+            System.out.println(c + c.getNumlapices());
+        }
     }
 }
