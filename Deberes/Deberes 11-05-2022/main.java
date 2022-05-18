@@ -4,17 +4,12 @@ public class main {
     public static void main(String[] args){
 
         int opcion = 0;
-        int v_avion = 900;
-        int v_tren = 200;
-        int v_coche = 120;
-        int v_bicicleta = 20;
+        double kilometros;
 
-        enum Transporte{
-            AVION,
-            TREN,
-            COCHE,
-            BICICLETA;
-        }
+        MediosTransporte mtAvion = MediosTransporte.AVION;
+        MediosTransporte mtTren = MediosTransporte.TREN;
+        MediosTransporte mtCoche = MediosTransporte.COCHE;
+        MediosTransporte mtBici = MediosTransporte.BICI;
 
         Scanner sc = new Scanner(System.in);
 
@@ -29,7 +24,7 @@ public class main {
             } elif(opcion == 2){
                 //2500km
                 //125km
-                System.out.println("Por hacer");
+                System.out.println("Si quiero recorrer 200km, tardo " + mtAvion.tiempo(200));
             } elif(opcion == 3){
                 System.out.println("Por hacer.");
             }
