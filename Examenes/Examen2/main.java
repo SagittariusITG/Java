@@ -96,7 +96,9 @@ public class main {
             System.out.print("Indica el tipo de habitacion que desea: ");
             tipoHabitacion = sc.nextLine();
             // sc.nextLine();
-            if(tipoHabitacion.equals("SALIR"));
+            if(tipoHabitacion.equals("SALIR")){
+                break;
+            }; 
             habitacion = Albergue.valueOf(tipoHabitacion);
             System.out.print("Indica el numero de personas: ");
             numPersonas = sc.nextInt();
