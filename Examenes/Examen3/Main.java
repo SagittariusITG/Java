@@ -3,19 +3,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args){
-        
-        Random r = new Random();
-        int vida_low = 5;
-        int vida_high = 7;
-        int vida_result = r.nextInt(vida_low, vida_high + 1);
-        int danio_low = 2;
-        int danio_high = 4;
-        int danio_result = r.nextInt(danio_low, danio_high + 1);
-        int agilidad_low = 5;
-        int agilidad_high = 7;
-        int agilidad_result = r.nextInt(agilidad_low, agilidad_high + 1);
-
         Monstruo m1 = Monstruo.PICHU;
+        YoMonstruo ym1 = YoMonstruo.SAGI;
         Scanner sc = new Scanner (System.in);
         int opcion;
 
@@ -26,10 +15,19 @@ public class Main {
                 System.out.println("\nAtacar\n");
             } else if(opcion == 2){
                 System.out.println("\nHuir\n");
+                if(ym1.getAgilidad() > m1.getAgilidad()){
+                    System.out.println("Eres mas agil");
+                    break;
+                } else {
+                    System.out.println("Has perdido una vida.");
+                    ym1.perderVida();
+                }
             } else if(opcion == 3){
-                System.out.println("\nMis estadisticas\n");
+                System.out.println("\nMis estadisticas\n" + "Vida: " + ym1.getVida() + "\nDaño: " + ym1.getDanio() + "\nAgilidad: " + ym1.getAgilidad());
+                System.out.println("\n\n");
             } else if(opcion == 4){
                 System.out.println("\nVer estadisticas Monstruo\n" + "Vida: " + m1.getVida() + "\nDaño: " + m1.getDanio() + "\nAgilidad: " + m1.getAgilidad());
+                System.out.println("\n\n");
             }
         }
     }
